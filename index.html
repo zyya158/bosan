@@ -3,58 +3,300 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Beating Heart</title>
+    <title>Cute Surprise</title>
     <style>
       body {
         margin: 0;
+        padding: 0;
+        height: 100vh;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 100vh;
-        background-color: #f0f0f0;
+        background-image: url("back2.jpeg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        font-family: "Arial", sans-serif;
       }
 
-      .heart {
-        width: 100px;
-        height: 100px;
-        position: relative;
-        background-color: red;
-        transform: rotate(-45deg);
-        animation: beat 1s infinite;
-      }
-
-      .heart::before,
-      .heart::after {
-        content: "";
-        width: 100px;
-        height: 100px;
-        background-color: red;
-        border-radius: 50%;
+      .main-gif {
         position: absolute;
+        width: 400px;
+        height: auto;
+        top: 53%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
       }
 
-      .heart::before {
-        top: -50px;
-        left: 0;
+      .decorative-gif {
+        position: absolute;
+        width: 150px;
+        height: auto;
       }
 
-      .heart::after {
-        left: 50px;
-        top: 0;
+      .gif1 {
+        top: 4%;
+        left: 5%;
+        width: 200px;
+      }
+      .gif2 {
+        top: 23%;
+        right: 10%;
+      }
+      .gif3 {
+        bottom: 10%;
+        left: 15%;
+      }
+      .gif4 {
+        bottom: 15%;
+        right: 5%;
+        width: 300px;
+      }
+      .gif5 {
+        top: 40%;
+        left: 75%;
+      }
+      .gif6 {
+        top: 50%;
+        left: 10%;
+      }
+      .gif7 {
+        top: 5%;
+        left: 40%;
+      }
+      .gif8 {
+        bottom: 32%;
+        left: 80%;
+        width: 100px;
+      }
+      .gif9 {
+        top: 25%;
+        left: 20%;
+      }
+      .gif10 {
+        top: 15%;
+        right: 30%;
+        width: 200px;
+      }
+      .gif11 {
+        top: 20%;
+        right: 45%;
+      }
+      .gif12 {
+        bottom: 25%;
+        left: 23%;
+      }
+      .gif13 {
+        bottom: 10%;
+        left: 50%;
+      }
+      .gif14 {
+        top: 5%;
+        right: 25%;
       }
 
-      @keyframes beat {
-        0%,
-        100% {
-          transform: scale(1) rotate(-45deg);
-        }
-        50% {
-          transform: scale(1.2) rotate(-45deg);
-        }
+      .next-button {
+        width: 200px;
+        background-color: #ff69b4;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        padding: 15px 30px;
+        cursor: pointer;
+        font-size: 18px;
+        margin-top: 600px;
+        transition: background-color 0.2s, transform 0.2s;
+      }
+
+      .next-button:hover {
+        background-color: #ff1493;
+        transform: scale(1.1);
+      }
+
+      .dialog-container {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 300px;
+        height: auto;
+        z-index: 0;
+      }
+
+      .dialog-image {
+        width: 100%;
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 10px; /* Optional: rounded corners */
+      }
+
+      /* Style for the text inside the image */
+      .dialog-text {
+        position: absolute;
+        top: 65%; /* Center vertically */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Adjust for centering */
+        color: #000; /* Text color */
+        font-size: 18px; /* Font size */
+        text-align: center;
+        z-index: 1; /* Ensure text is above the image */
+        padding: 10px; /* Optional: padding for better readability */
+        border-radius: 5px; /* Optional: rounded corners for text background */
       }
     </style>
   </head>
   <body>
-    <div class="heart"></div>
+    <!-- Decorative GIFs -->
+    <img
+      class="decorative-gif gif1"
+      src="download (10).gif"
+      alt="Decorative GIF 1"
+    />
+    <img
+      class="decorative-gif gif2"
+      src="download (5).gif"
+      alt="Decorative GIF 2"
+    />
+    <img
+      class="decorative-gif gif3"
+      src="m o l a n g.gif"
+      alt="Decorative GIF 3"
+    />
+    <img
+      class="decorative-gif gif4"
+      src="lovesign.gif"
+      alt="Decorative GIF 4"
+    />
+    <img class="decorative-gif gif5" src="spark.gif" alt="Decorative GIF 5" />
+    <img
+      class="decorative-gif gif6"
+      src="Funny Bunny face.gif"
+      alt="Decorative GIF 6"
+    />
+    <img
+      class="decorative-gif gif7"
+      src="download (8).gif"
+      alt="Decorative GIF 6"
+    />
+    <img class="decorative-gif gif8" src="walk.gif" alt="Decorative GIF 6" />
+    <img
+      class="decorative-gif gif9"
+      src="download (11).gif"
+      alt="Decorative GIF 6"
+    />
+    <img
+      class="decorative-gif gif10"
+      src="download (9).gif"
+      alt="Decorative GIF 6"
+    />
+    <img class="decorative-gif gif11" src="here.gif" alt="Decorative GIF 6" />
+    <img class="decorative-gif gif12" src="cheer.gif" alt="Decorative GIF 6" />
+    <img
+      class="decorative-gif gif13"
+      src="download (6).gif"
+      alt="Decorative GIF 6"
+    />
+    <img class="decorative-gif gif14" src="sigh.gif" alt="Decorative GIF 6" />
+
+    <!-- GIF Display -->
+    <img id="gifDisplay" class="main-gif" src="mail.gif" alt="Greeting GIF" />
+
+    <!-- Dialog Container -->
+    <div class="dialog-container">
+      <img
+        id="dialogImage"
+        class="dialog-image"
+        src="stick.png"
+        alt="Dialog Image"
+      />
+      <div id="dialogText" class="dialog-text">
+        Welcome to the Cute Surprise!
+      </div>
+    </div>
+
+    <!-- Next Button -->
+    <button id="nextButton" class="next-button" onclick="showNextGif()">
+      Click Me!
+    </button>
+
+    <script>
+      // List of GIFs and corresponding texts for the dialog box
+      const gifs = [
+        "mail.gif",
+        "peng.gif",
+        "loveu.gif",
+        "moti.gif",
+        "download (15).gif",
+        "bunnies.gif",
+        "great.jpeg",
+        "lovehug.gif",
+        "blow.gif",
+        "alllove.gif",
+        "chick.png",
+        "download (16).gif",
+        "download (14).gif",
+        "yeay.gif",
+        "toast.gif",
+        "bunny.gif",
+        "download.jpeg",
+        "virtualhug.gif",
+        "exist.gif",
+      ];
+      const buttonTexts = [
+        "Next Surprise!",
+        "Hi!",
+        "Love is here!",
+        "Cute overload!",
+        "Fighting!",
+        "Go go go!",
+        "You’ve got this!",
+        "Stay strong!",
+        "A kiss for you!",
+        "All love for you!",
+        "Meet the cute chick!",
+        "Stay joyful!",
+        ":D!",
+        "Cheers to you!",
+        "Very demure!",
+        "Very mindful!",
+        "Brighten your day!",
+        "Warm hugs for you!",
+        "You matter!",
+      ];
+
+      const dialogTexts = [
+        "Check out this cute mail!",
+        "I love you more than you know!",
+        "Look at this lovely moti!",
+        "Let’s keep fighting together!",
+        "Cuteness overload with these bunnies!",
+        "You're doing great, don’t stop!",
+        "Sending you a loving hug!",
+        "Blowing kisses just for you!",
+        "All the love in the world is yours!",
+        "A tiny chick to brighten your day!",
+        "Keep smiling, you're amazing!",
+        "Back in the days, poor old me didnt know what to believe",
+        "Strong girls do cry!",
+        "Here’s a toast to your greatness!",
+        "This bunny is all about you!",
+        "Sending virtual love your way!",
+        "Here’s something to cheer you up!",
+        "A virtual hug to make your day better!",
+        "Always remember, you exist and matter!",
+      ];
+
+      let currentIndex = 0;
+
+      // Function to show the next GIF and update the dialog box text
+      function showNextGif() {
+        currentIndex = (currentIndex + 1) % gifs.length;
+        document.getElementById("gifDisplay").src = gifs[currentIndex];
+        document.getElementById("nextButton").innerText =
+          buttonTexts[currentIndex];
+        document.getElementById("dialogText").innerText =
+          dialogTexts[currentIndex];
+      }
+    </script>
   </body>
 </html>
