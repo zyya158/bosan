@@ -22,7 +22,7 @@ body {
 
 .main-gif {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
@@ -66,36 +66,7 @@ body {
   transform: scale(1.1);
 }
 
-.dialog-container {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 80%;
-  max-width: 300px;
-  z-index: 0;
-}
-
-.dialog-image {
-  width: 100%;
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 10px; /* Optional: rounded corners */
-}
-
-.dialog-text {
-  position: absolute;
-  top: 65%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #000;
-  font-size: 18px;
-  text-align: center;
-  z-index: 1;
-  padding: 10px;
-  border-radius: 5px;
-}
-
 /* Responsive Design - Media Queries */
-
 /* For small phones (320px to 480px) */
 @media (max-width: 480px) {
   .main-gif {
@@ -107,9 +78,6 @@ body {
   .next-button {
     font-size: 14px;
     padding: 10px 20px;
-  }
-  .dialog-text {
-    font-size: 14px;
   }
 }
 
@@ -164,9 +132,6 @@ body {
   .next-button {
     font-size: 16px; /* Increase button size for better interaction */
     padding: 12px 24px;
-  }
-  .dialog-text {
-    font-size: 16px; /* Adjust text size */
   }
 }
     </style>
@@ -227,19 +192,6 @@ body {
     <!-- GIF Display -->
     <img id="gifDisplay" class="main-gif" src="mail.gif" alt="Greeting GIF" />
 
-    <!-- Dialog Container -->
-    <div class="dialog-container">
-      <img
-        id="dialogImage"
-        class="dialog-image"
-        src="stick.png"
-        alt="Dialog Image"
-      />
-      <div id="dialogText" class="dialog-text">
-        Welcome to the Cute Surprise!
-      </div>
-    </div>
-
     <!-- Next Button -->
     <button id="nextButton" class="next-button" onclick="showNextGif()">
       Click Me!
@@ -289,28 +241,6 @@ body {
         "You matter!",
       ];
 
-      const dialogTexts = [
-        "Check out this cute mail!",
-        "I love you more than you know!",
-        "Look at this lovely moti!",
-        "Let’s keep fighting together!",
-        "Cuteness overload with these bunnies!",
-        "You're doing great, don’t stop!",
-        "Sending you a loving hug!",
-        "Blowing kisses just for you!",
-        "All the love in the world is yours!",
-        "A tiny chick to brighten your day!",
-        "Keep smiling, you're amazing!",
-        "Back in the days, poor old me didnt know what to believe",
-        "Strong girls do cry!",
-        "Here’s a toast to your greatness!",
-        "This bunny is all about you!",
-        "Sending virtual love your way!",
-        "Here’s something to cheer you up!",
-        "A virtual hug to make your day better!",
-        "Always remember, you exist and matter!",
-      ];
-
       let currentIndex = 0;
 
       function showNextGif() {
@@ -319,8 +249,6 @@ body {
         document.getElementById("gifDisplay").src = gifs[currentIndex];
         document.getElementById("nextButton").textContent =
           buttonTexts[currentIndex];
-        document.getElementById("dialogText").textContent =
-          dialogTexts[currentIndex];
       }
     </script>
   </body>
