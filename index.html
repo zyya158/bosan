@@ -5,173 +5,170 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cute Surprise</title>
     <style>
-      body {
-        margin: 0;
-        padding: 0;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-image: url("back2.jpeg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        font-family: "Arial", sans-serif;
-      }
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("back2.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: "Arial", sans-serif;
+}
 
-      .main-gif {
-        position: absolute;
-        width: 50%;
-        height: auto;
-        top: 53%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 1;
-      }
+.main-gif {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
 
-      .decorative-gif {
-        position: absolute;
-        width: 20%;
-        height: auto;
-      }
+.decorative-gif {
+  position: absolute;
+  height: auto;
+}
 
-      .gif1 {
-        top: 4%;
-        left: 5%;
-        width: 20%;
-      }
-      .gif2 {
-        top: 23%;
-        right: 10%;
-      }
-      .gif3 {
-        bottom: 10%;
-        left: 15%;
-      }
-      .gif4 {
-        bottom: 15%;
-        right: 5%;
-        width: 30%;
-      }
-      .gif5 {
-        top: 40%;
-        left: 75%;
-      }
-      .gif6 {
-        top: 50%;
-        left: 10%;
-      }
-      .gif7 {
-        top: 5%;
-        left: 40%;
-      }
-      .gif8 {
-        bottom: 32%;
-        left: 80%;
-        width: 10%;
-      }
-      .gif9 {
-        top: 25%;
-        left: 20%;
-      }
-      .gif10 {
-        top: 15%;
-        right: 30%;
-        width: 20%;
-      }
-      .gif11 {
-        top: 20%;
-        right: 45%;
-      }
-      .gif12 {
-        bottom: 25%;
-        left: 23%;
-      }
-      .gif13 {
-        bottom: 10%;
-        left: 50%;
-      }
-      .gif14 {
-        top: 5%;
-        right: 25%;
-      }
+.gif1 { top: 4%; left: 5%; }
+.gif2 { top: 23%; right: 10%; }
+.gif3 { bottom: 10%; left: 15%; }
+.gif4 { bottom: 15%; right: 5%; }
+.gif5 { top: 40%; left: 75%; }
+.gif6 { top: 50%; left: 10%; }
+.gif7 { top: 5%; left: 40%; }
+.gif8 { bottom: 32%; left: 80%; }
+.gif9 { top: 25%; left: 20%; }
+.gif10 { top: 15%; right: 30%; }
+.gif11 { top: 20%; right: 45%; }
+.gif12 { bottom: 25%; left: 23%; }
+.gif13 { bottom: 10%; left: 50%; }
+.gif14 { top: 5%; right: 25%; }
 
-      .next-button {
-        width: 200px;
-        background-color: #ff69b4;
-        color: white;
-        border: none;
-        border-radius: 20px;
-        padding: 15px 30px;
-        cursor: pointer;
-        font-size: 18px;
-        margin-top: 600px;
-        transition: background-color 0.2s, transform 0.2s;
-      }
+.next-button {
+  width: 200px;
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 15px 30px;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 600px;
+  transition: background-color 0.2s, transform 0.2s;
+}
 
-      .next-button:hover {
-        background-color: #ff1493;
-        transform: scale(1.1);
-      }
+.next-button:hover {
+  background-color: #ff1493;
+  transform: scale(1.1);
+}
 
-      .dialog-container {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        width: 80%;
-        max-width: 300px;
-        z-index: 0;
-      }
+.dialog-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 80%;
+  max-width: 300px;
+  z-index: 0;
+}
 
-      .dialog-image {
-        width: 100%;
-        height: auto; /* Maintain aspect ratio */
-        border-radius: 10px; /* Optional: rounded corners */
-      }
+.dialog-image {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Optional: rounded corners */
+}
 
-      .dialog-text {
-        position: absolute;
-        top: 65%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: #000;
-        font-size: 18px;
-        text-align: center;
-        z-index: 1;
-        padding: 10px;
-        border-radius: 5px;
-      }
+.dialog-text {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #000;
+  font-size: 18px;
+  text-align: center;
+  z-index: 1;
+  padding: 10px;
+  border-radius: 5px;
+}
 
-      /* Media Queries for Responsiveness */
-      @media (max-width: 768px) {
-        .main-gif {
-          width: 60%;
-        }
-        .decorative-gif {
-          width: 15%;
-        }
-        .next-button {
-          font-size: 16px;
-          padding: 12px 25px;
-        }
-      }
+/* Responsive Design - Media Queries */
 
-      @media (max-width: 480px) {
-        .main-gif {
-          width: 70%;
-        }
-        .decorative-gif {
-          width: 25%;
-        }
-        .next-button {
-          font-size: 14px;
-          padding: 10px 20px;
-        }
-        .dialog-text {
-          font-size: 14px;
-        }
-      }
+/* For small phones (320px to 480px) */
+@media (max-width: 480px) {
+  .main-gif {
+    width: 70%; /* Adjust main GIF size */
+  }
+  .decorative-gif {
+    width: 20%; /* Adjust size of decorative GIFs */
+  }
+  .next-button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+  .dialog-text {
+    font-size: 14px;
+  }
+}
+
+/* For tablets and laptops (481px to 1024px) */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .main-gif {
+    width: 60%; /* Larger for tablets */
+  }
+  .decorative-gif {
+    width: 15%; /* Slightly larger for tablets */
+  }
+  .next-button {
+    font-size: 16px;
+    padding: 12px 25px;
+  }
+}
+
+/* For laptops (1025px to 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .main-gif {
+    width: 50%; /* Standard size for laptops */
+  }
+  .decorative-gif {
+    width: 15%; /* Standard decorative GIF size */
+  }
+  .next-button {
+    font-size: 18px;
+  }
+}
+
+/* For large monitors (1441px and above) */
+@media (min-width: 1441px) {
+  .main-gif {
+    width: 40%; /* Reduce size for large monitors */
+  }
+  .decorative-gif {
+    width: 12%;
+  }
+  .next-button {
+    font-size: 20px;
+  }
+}
+
+/* iPhone 14 Pro Max specific media query (430px width, 3x retina) */
+@media only screen and (min-device-width: 430px) and (max-device-width: 430px) and (-webkit-min-device-pixel-ratio: 3) {
+  .main-gif {
+    width: 65%; /* Slightly larger size for iPhone 14 Pro Max */
+  }
+  .decorative-gif {
+    width: 18%; /* Adjust decorative GIFs */
+  }
+  .next-button {
+    font-size: 16px; /* Increase button size for better interaction */
+    padding: 12px 24px;
+  }
+  .dialog-text {
+    font-size: 16px; /* Adjust text size */
+  }
+}
     </style>
   </head>
   <body>
