@@ -14,7 +14,7 @@
         justify-content: center;
         align-items: center;
         background-image: url("back2.jpeg");
-        background-size: contain;
+        background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
         font-family: "Arial", sans-serif;
@@ -22,7 +22,7 @@
 
       .main-gif {
         position: absolute;
-        width: 400px;
+        width: 50%;
         height: auto;
         top: 53%;
         left: 50%;
@@ -32,14 +32,14 @@
 
       .decorative-gif {
         position: absolute;
-        width: 150px;
+        width: 20%;
         height: auto;
       }
 
       .gif1 {
         top: 4%;
         left: 5%;
-        width: 200px;
+        width: 20%;
       }
       .gif2 {
         top: 23%;
@@ -52,7 +52,7 @@
       .gif4 {
         bottom: 15%;
         right: 5%;
-        width: 300px;
+        width: 30%;
       }
       .gif5 {
         top: 40%;
@@ -69,7 +69,7 @@
       .gif8 {
         bottom: 32%;
         left: 80%;
-        width: 100px;
+        width: 10%;
       }
       .gif9 {
         top: 25%;
@@ -78,7 +78,7 @@
       .gif10 {
         top: 15%;
         right: 30%;
-        width: 200px;
+        width: 20%;
       }
       .gif11 {
         top: 20%;
@@ -119,8 +119,8 @@
         position: absolute;
         top: 20px;
         right: 20px;
-        width: 300px;
-        height: auto;
+        width: 80%;
+        max-width: 300px;
         z-index: 0;
       }
 
@@ -130,18 +130,47 @@
         border-radius: 10px; /* Optional: rounded corners */
       }
 
-      /* Style for the text inside the image */
       .dialog-text {
         position: absolute;
-        top: 65%; /* Center vertically */
-        left: 50%; /* Center horizontally */
-        transform: translate(-50%, -50%); /* Adjust for centering */
-        color: #000; /* Text color */
-        font-size: 18px; /* Font size */
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #000;
+        font-size: 18px;
         text-align: center;
-        z-index: 1; /* Ensure text is above the image */
-        padding: 10px; /* Optional: padding for better readability */
-        border-radius: 5px; /* Optional: rounded corners for text background */
+        z-index: 1;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      /* Media Queries for Responsiveness */
+      @media (max-width: 768px) {
+        .main-gif {
+          width: 60%;
+        }
+        .decorative-gif {
+          width: 15%;
+        }
+        .next-button {
+          font-size: 16px;
+          padding: 12px 25px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .main-gif {
+          width: 70%;
+        }
+        .decorative-gif {
+          width: 25%;
+        }
+        .next-button {
+          font-size: 14px;
+          padding: 10px 20px;
+        }
+        .dialog-text {
+          font-size: 14px;
+        }
       }
     </style>
   </head>
@@ -176,27 +205,27 @@
     <img
       class="decorative-gif gif7"
       src="download (8).gif"
-      alt="Decorative GIF 6"
+      alt="Decorative GIF 7"
     />
-    <img class="decorative-gif gif8" src="walk.gif" alt="Decorative GIF 6" />
+    <img class="decorative-gif gif8" src="walk.gif" alt="Decorative GIF 8" />
     <img
       class="decorative-gif gif9"
       src="download (11).gif"
-      alt="Decorative GIF 6"
+      alt="Decorative GIF 9"
     />
     <img
       class="decorative-gif gif10"
       src="download (9).gif"
-      alt="Decorative GIF 6"
+      alt="Decorative GIF 10"
     />
-    <img class="decorative-gif gif11" src="here.gif" alt="Decorative GIF 6" />
-    <img class="decorative-gif gif12" src="cheer.gif" alt="Decorative GIF 6" />
+    <img class="decorative-gif gif11" src="here.gif" alt="Decorative GIF 11" />
+    <img class="decorative-gif gif12" src="cheer.gif" alt="Decorative GIF 12" />
     <img
       class="decorative-gif gif13"
       src="download (6).gif"
-      alt="Decorative GIF 6"
+      alt="Decorative GIF 13"
     />
-    <img class="decorative-gif gif14" src="sigh.gif" alt="Decorative GIF 6" />
+    <img class="decorative-gif gif14" src="sigh.gif" alt="Decorative GIF 14" />
 
     <!-- GIF Display -->
     <img id="gifDisplay" class="main-gif" src="mail.gif" alt="Greeting GIF" />
@@ -220,7 +249,6 @@
     </button>
 
     <script>
-      // List of GIFs and corresponding texts for the dialog box
       const gifs = [
         "mail.gif",
         "peng.gif",
@@ -288,13 +316,13 @@
 
       let currentIndex = 0;
 
-      // Function to show the next GIF and update the dialog box text
       function showNextGif() {
         currentIndex = (currentIndex + 1) % gifs.length;
+
         document.getElementById("gifDisplay").src = gifs[currentIndex];
-        document.getElementById("nextButton").innerText =
+        document.getElementById("nextButton").textContent =
           buttonTexts[currentIndex];
-        document.getElementById("dialogText").innerText =
+        document.getElementById("dialogText").textContent =
           dialogTexts[currentIndex];
       }
     </script>
